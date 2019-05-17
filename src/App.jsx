@@ -1,8 +1,11 @@
 import React from 'react'
 import Mx from './Mx/index'
 
-//Check does Mx work
+//Mx test
 Mx.isMx()
+const myMatrix = new Mx.Matrix()
+console.log(myMatrix.isMx())
+console.log(myMatrix)
 
 function App() {
   return (

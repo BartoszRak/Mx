@@ -1,7 +1,9 @@
+import Matrix from './Matrix'
+import { isMx } from './composition'
+
 const Mx: any = {
-  isMx: (): void => {
-    console.log('It is Mx library!')
-  }
+  isMx,
+  Matrix,
 }
 
 export default Mx

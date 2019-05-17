@@ -1,1 +1,1 @@
-var Mx=function(){"use strict";return{isMx:function(){console.log("It is Mx library!")}}}();
+var Mx=function(){"use strict";function t(){return!0}return{isMx:t,Matrix:function(){return function(n){this._data=n,this.isMx=t}}()}}();
