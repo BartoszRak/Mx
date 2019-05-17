@@ -1,4 +1,8 @@
 import React from 'react'
+import Mx from './Mx/index'
+
+//Check does Mx work
+Mx.isMx()
 
 function App() {
   return (
