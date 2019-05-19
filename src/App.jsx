@@ -5,7 +5,7 @@ import Mx from './Mx/index'
 Mx.isMx()
 const myMatrix = new Mx.Matrix([
   [1, 5, 2],
-  [15, 19, 4],
+  [15, 19],
   [8, 4, 2]
 ])
 console.log(myMatrix.isMx())
