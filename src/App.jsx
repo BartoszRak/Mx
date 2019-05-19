@@ -3,9 +3,16 @@ import Mx from './Mx/index'
 
 //Mx test
 Mx.isMx()
-const myMatrix = new Mx.Matrix()
+const myMatrix = new Mx.Matrix([
+  [1, 5, 2],
+  [15, 19, 4],
+  [8, 4, 2]
+])
 console.log(myMatrix.isMx())
 console.log(myMatrix)
+console.log(myMatrix.cell(1, 1))
+console.log(myMatrix.column(1))
+console.log(myMatrix.row(1))
 
 function App() {
   return (
