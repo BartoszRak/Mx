@@ -1,5 +1,3 @@
-import { isMx } from '../composition'
-
 class Matrix {
 
     private _data: number[][]
@@ -55,7 +53,7 @@ class Matrix {
         }, [])
     }
 
-    public isMx = isMx
+    public isMx(): boolean { return true }
 }
 
 export default Matrix

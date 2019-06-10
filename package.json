@@ -1,7 +1,23 @@
 {
-  "name": "mx",
-  "version": "0.1.0",
-  "private": true,
+  "name": "mx-computing",
+  "description": "Matrices computing library",
+  "version": "0.0.1",
+  "homepage": "https://dev.mx-computing.bartoszrak.com/",
+  "repository": "https://github.com/BartoszRak/Mx",
+  "module": "lib/mx.es.js",
+  "private": false,
+  "license": "MIT",
+  "author": "Bartosz Rak <bartosz.rak.official@gmail.com>",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "matrix",
+    "matrices",
+    "computing",
+    "math",
+    "javascript"
+  ],
   "devDependencies": {
     "@types/jest": "^24.0.13",
     "@types/node": "^12.0.2",
@@ -17,18 +33,20 @@
     "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^8.0.1",
-    "typescript": "^3.4.5"
+    "typescript": "^3.4.5",
+    "concurrently": "^4.1.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "jest-dom": "^3.5.0",
+    "jest-enzyme": "^7.0.2"
   },
   "dependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --forceExit --env=jsdom",
     "eject": "react-scripts eject",
     "lib": "rollup -c && tsc"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [

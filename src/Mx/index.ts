@@ -1,8 +1,7 @@
 import Matrix from './Matrix'
-import { isMx } from './composition'
 
 const Mx: any = {
-  isMx,
+  isMx: (): boolean => true,
   Matrix,
 }
 
