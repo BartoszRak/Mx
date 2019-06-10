@@ -18,8 +18,6 @@ class Matrix {
             for (let i: number = 0; i < longestRow; i++) {
                 if (!newRow[i]) {
                     newRow[i] = fillValue
-                } else {
-                    newRow[i] = newRow[i]
                 }
             }
             return newRow
