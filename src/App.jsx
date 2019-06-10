@@ -1,5 +1,5 @@
 import React from 'react'
-import Mx from './Mx/index'
+import Mx from './Mx'
 
 //Mx test
 Mx.isMx()
