@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "mxcomputing-7f8c6"
+    "dev": "mxcomputing-7f8c6",
+    "master": "mxcomputing-7f8c6"
   }
 }
