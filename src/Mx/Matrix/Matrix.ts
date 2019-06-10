@@ -2,19 +2,19 @@ import { isMx } from '../composition'
 
 class Matrix {
 
-    private _data: Array<Array<number>>
+    private _data: number[][]
 
-    constructor(data: Array<Array<number>>) {
+    constructor(data: number[][]) {
         this._data = this.fillEmptyCells(data)
     }
 
-    private fillEmptyCells = (matrix: Array<Array<number>>, fillValue: number = 0): Array<Array<number>> => {
-        const longestRow: number = matrix.reduce((acc: number, currValue: Array<number>) => {
+    private fillEmptyCells(matrix: number[][], fillValue: number = 0): number[][] {
+        const longestRow: number = matrix.reduce((acc: number, currValue: number[]) => {
             if (currValue.length > acc) return currValue.length
             return acc
         }, 0)
         const newMatrix = matrix.map(row => {
-            const newRow: Array<number> = [ ...row ]
+            const newRow: number[] = [ ...row ]
             for (let i: number = 0; i < longestRow; i++) {
                 if (!newRow[i]) {
                     newRow[i] = fillValue
@@ -25,16 +25,32 @@ class Matrix {
         return newMatrix
     }
 
-    public cell = (column: number, row: number): number => {
-        return this._data[row][column]
+    private transpose(): Matrix {
+        const newRaw = this.raw().reduce((accArr: number[][], row: number[], rowIndex: number) => {
+            const newAcc: number[][] = [ ...accArr ]
+            row.forEach((rowValue, rowValueIndex) => {
+                if (!newAcc[rowValueIndex]) newAcc[rowValueIndex] = []
+                newAcc[rowValueIndex][rowIndex] = rowValue
+            })
+            return newAcc
+        }, [])
+        return new Matrix(newRaw)
     }
 
-    public row = (row: number): Array<number> => {
-        return this._data[row]
+    public raw(): number[][] {
+        return this._data
     }
 
-    public column = (column: number): Array<number> => {
-        return this._data.reduce((acc: Array<number>, currVal: Array<number>) => {
+    public cell(column: number, row: number): number {
+        return this.raw()[row][column]
+    }
+
+    public row(row: number): number[] {
+        return this.raw()[row]
+    }
+
+    public column(column: number): number[] {
+        return this.raw().reduce((acc: number[], currVal: number[]) => {
             return [ ...acc, currVal[column]]
         }, [])
     }
