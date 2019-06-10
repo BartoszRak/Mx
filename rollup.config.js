@@ -6,19 +6,21 @@ import {terser} from "rollup-plugin-terser";
 // delete old typings to avoid issues
 require('fs').unlink('dist/index.d.ts', (err) => {});
 
+const outputPrefix = 'dist/'
+
 export default {
 	input: 'src/Mx/index.ts',
 	output: [
 		{
-			file: 'dist/index.js',
+			file: `${outputPrefix}index.js`,
 			format: 'cjs'
 		},
 		{
-			file: 'dist/index.es.js',
+			file: `${outputPrefix}index.es.js`,
 			format: 'es'
 		},
 		{
-			file: 'dist/index.bundle.js',
+			file: `${outputPrefix}index.bundle.js`,
 			format: 'iife',
 			name: 'Mx'
 		}
