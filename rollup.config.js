@@ -6,7 +6,7 @@ import {terser} from "rollup-plugin-terser";
 // delete old typings to avoid issues
 require('fs').unlink('dist/index.d.ts', (err) => {});
 
-const outputPrefix = 'dist/'
+const outputPrefix = 'lib/'
 
 export default {
 	input: 'src/Mx/index.ts',
