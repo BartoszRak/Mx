@@ -13,6 +13,8 @@ console.log(myMatrix)
 console.log(myMatrix.cell(1, 1))
 console.log(myMatrix.column(1))
 console.log(myMatrix.row(1))
+ const transposedMatrix = myMatrix.transpose()
+ console.log(transposedMatrix)
 
 function App() {
   return (
