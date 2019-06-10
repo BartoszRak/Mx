@@ -20,17 +20,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Mx Computing</h1>
+        <h2>Matrices computing library</h2>
+        <p>Open console to see what is going on.</p>
+
+        <a href="https://github.com/BartoszRak/Mx">Github epository</a><br/>
+        <a href="https://bartoszrak.com/">Author website</a>
       </header>
     </div>
   )
