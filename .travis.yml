@@ -13,9 +13,12 @@ before_install:
   - yarn global add firebase-tools
 install:
   - yarn
+before_script:
+  - chmod ugo+x ./scripts/test-and-build.sh
+  - chmod ugo+x ./scripts/publish.sh
 script:
-  - yarn test
-  - yarn build
+  - ./scripts/test-and-build.sh
+  - ./scripts/publish.sh
 deploy:
   - provider: firebase
     skip_cleanup: true
