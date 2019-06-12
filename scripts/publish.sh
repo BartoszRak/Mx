@@ -1,11 +1,11 @@
 #!/bin/bash
 set -ev
 
-echo "$TRAVIS_PULL_REQUEST"
 if [[ "$TRAVIS_BRANCH" = "master" && "$TRAVIS_PULL_REQUEST" = "false" ]]
 then
-  echo "$TRAVIS_PULL_REQUEST"
   yarn lib
-  npm version patch --no-git
+  yarn global add makeshift
+  makeshift -r https://registry.npmjs.org/ -t $NPM_TOKEN
+  npm version patch --no-git-tag-version
   npm publish
 fi
