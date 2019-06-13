@@ -42,6 +42,53 @@ const myMatrix3 = new Mx.Matrix([
 // 58 4  22
 ```
 
+## `Get matrix cell`
+```javascript
+MyMatrixObject.cell(number, number)
+```
+### Examples
+```javascript
+const myMatrix = new Mx.Matrix([
+  [1, 5],
+  [7, 8],
+])
+
+myMatrix.cell(0, 1)
+// Returns: 7
+```
+
+## `Get matrix column`
+```javascript
+MyMatrixObject.column(number)
+```
+### Examples
+```javascript
+const myMatrix = new Mx.Matrix([
+  [1, 5, 4],
+  [7, 8, 2],
+  [2, 51, 12],
+])
+
+myMatrix.column(2)
+// Returns: [4, 2, 12]
+```
+
+## `Get matrix row`
+```javascript
+MyMatrixObject.row(number)
+```
+### Examples
+```javascript
+const myMatrix = new Mx.Matrix([
+  [1, 5, 4],
+  [7, 8, 2],
+  [2, 51, 12],
+])
+
+myMatrix.row(1)
+// Returns: [7, 8, 2]
+```
+
 ## `Get matrix raw data`
 ```javascript
 MyMatrixObject.raw()
@@ -54,8 +101,26 @@ const myMatrix = new Mx.Matrix([
 ])
 
 myMatrix.raw()
-// Returns:
-// [[1, 5], [7, 8]]
+// Returns: [[1, 5], [7, 8]]
+```
+
+## `Transpose matrix`
+```javascript
+MyMatrixObject.transpose()
+```
+### Examples
+```javascript
+const myMatrix = new Mx.Matrix([
+  [1, 5, 4],
+  [7, 8, 2],
+  [2, 51, 12],
+])
+
+const myTransposedMatrix = myMatrix.transpose()
+// Returns new Mx.Matrix with data: 
+// 1  7  2
+// 5  8  51
+// 4  2  12
 ```
 
 # Available Scripts
