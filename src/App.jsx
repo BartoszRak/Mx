@@ -15,6 +15,8 @@ console.log(myMatrix.column(1))
 console.log(myMatrix.row(1))
 const transposedMatrix = myMatrix.transpose()
 console.log(transposedMatrix)
+Mx.displayMatricesDimensions([ myMatrix, transposedMatrix ])
+
 
 function App() {
   return (

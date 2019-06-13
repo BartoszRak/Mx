@@ -53,7 +53,19 @@ class Matrix {
         }, [])
     }
 
+    public colNum(): number {
+        return this._data[0].length
+    }
+
+    public rowNum(): number {
+        return this._data.length
+    }
+
     public isMx(): boolean { return true }
+
+    public displayDimensions(): void {
+        console.log(`[${this.colNum()} columns / ${this.rowNum()} rows]`)
+    }
 }
 
 export default Matrix
