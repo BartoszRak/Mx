@@ -1,156 +1,114 @@
 # **Mx - Matrices computing library**
 
-# Code examples
-
-## `Create new matrix`
+# Reference
+## Core
+### `Create new matrix`
 ```javascript
-new Mx.Matrix(number[][], number = 0)
-```
-### Examples
-```javascript
-const myMatrix1 = new Mx.Matrix([
-  [1, 5, 2],
-  [15, 19, 3],
-  [8, 4, 2]
+import Mx from 'mx-computing'
+const matrix = new Mx.Matrix([
+    [1, 2],
+    [4, 3],
 ])
+```
 
-// Creates matrix:
-// 1  5  2
-// 15 19 3
-// 8  4  2
-
-const myMatrix2 = new Mx.Matrix([
-  [4, 2],
-  [6],
-  [58, 4, 22]
+### `Get matrix cell`
+```javascript
+import Mx from 'mx-computing'
+const matrix = new Mx.Matrix([
+    [4, 1, 16],
+    [2, 23, 3],
 ])
-
-// Creates matrix:
-// 4  2  0
-// 6  0  0
-// 58 4  22
-
-const myMatrix3 = new Mx.Matrix([
-  [4, 2],
-  [6],
-  [58, 4, 22]
-], 13)
-
-// Creates matrix:
-// 4  2  13
-// 6  13  13
-// 58 4  22
+matrix.cell(2, 0) // returns 1
 ```
 
-## `Get matrix cell`
+### `Get matrix row and rows number`
 ```javascript
-MyMatrixObject.cell(number, number)
-```
-### Examples
-```javascript
-const myMatrix = new Mx.Matrix([
-  [1, 5],
-  [7, 8],
+import Mx from 'mx-computing'
+const matrix = new Mx.Matrix([
+    [51, 22],
+    [44, 36],
 ])
-
-myMatrix.cell(0, 1)
-// Returns: 7
+matrix.row(0) // returns [51, 22]
+matrix.rowNum() // returns 2
 ```
 
-## `Get matrix column`
+### `Get matrix column and columns number`
 ```javascript
-MyMatrixObject.column(number)
-```
-### Examples
-```javascript
-const myMatrix = new Mx.Matrix([
-  [1, 5, 4],
-  [7, 8, 2],
-  [2, 51, 12],
+import Mx from 'mx-computing'
+const matrix = new Mx.Matrix([
+    [4, 12],
+    [7, 8],
 ])
-
-myMatrix.column(2)
-// Returns: [4, 2, 12]
+matrix.column(1) // returns [12, 8]
+matrix.colNum() // return 2
 ```
 
-## `Get matrix columns number`
+### `Transpose matrix`
 ```javascript
-MyMatrixObject.colNum()
-```
-### Examples
-```javascript
-const myMatrix = new Mx.Matrix([
-  [1, 5, 4],
-  [2, 51, 12],
+import Mx from 'mx-computing'
+const matrix = new Mx.Matrix([
+    [4, 7],
+    [8, 6],
 ])
-
-myMatrix.colNum()
-// Returns: 3
+const transposedMatrix = matrix.transpose()
 ```
 
-## `Get matrix row`
+## Math
+
+### `Merge pair of matrices`
 ```javascript
-MyMatrixObject.row(number)
-```
-### Examples
-```javascript
-const myMatrix = new Mx.Matrix([
-  [1, 5, 4],
-  [7, 8, 2],
-  [2, 51, 12],
+import Mx from 'mx-computing'
+const firstMatrix = new Mx.Matrix([
+    [4, 12],
+    [7, 8],
 ])
-
-myMatrix.row(1)
-// Returns: [7, 8, 2]
-```
-
-## `Get matrix rows number`
-```javascript
-MyMatrixObject.rowNum()
-```
-### Examples
-```javascript
-const myMatrix = new Mx.Matrix([
-  [1, 5, 4],
-  [2, 51, 12],
+const secondMatrix = new Mx.Matrix([
+    [14, 7],
+    [86, 5],
 ])
-
-myMatrix.rowNum()
-// Returns: 2
+const mergedMatrix = Mx.MMath.mergePairOfMatrices(firstMatrix, secondMatrix)
 ```
 
-## `Get matrix raw data`
+### `Subtract pair of matrices`
 ```javascript
-MyMatrixObject.raw()
-```
-### Examples
-```javascript
-const myMatrix = new Mx.Matrix([
-  [1, 5],
-  [7, 8]
+import Mx from 'mx-computing'
+const firstMatrix = new Mx.Matrix([
+    [7, 4],
+    [2, 77],
 ])
-
-myMatrix.raw()
-// Returns: [[1, 5], [7, 8]]
-```
-
-## `Transpose matrix`
-```javascript
-MyMatrixObject.transpose()
-```
-### Examples
-```javascript
-const myMatrix = new Mx.Matrix([
-  [1, 5, 4],
-  [7, 8, 2],
-  [2, 51, 12],
+const secondMatrix = new Mx.Matrix([
+    [7, 47],
+    [22, 4],
 ])
+const subtractedMatrix = Mx.MMath.subtractPairOfMatrices(firstMatrix, secondMatrix)
+```
 
-const myTransposedMatrix = myMatrix.transpose()
-// Returns new Mx.Matrix with data: 
-// 1  7  2
-// 5  8  51
-// 4  2  12
+### `Multiply pair of matrices`
+```javascript
+import Mx from 'mx-computing'
+const firstMatrix = new Mx.Matrix([
+    [6, 5],
+    [3, 1],
+])
+const secondMatrix = new Mx.Matrix([
+    [6, 7],
+    [9, 2],
+])
+const multipliedMatrix = Mx.MMath.multiplyPairOfMatrices(firstMatrix, secondMatrix)
+```
+
+### `Act pair of matrices`
+```javascript
+import Mx from 'mx-computing'
+const firstMatrix = new Mx.Matrix([
+    [6, 5],
+    [3, 1],
+])
+const secondMatrix = new Mx.Matrix([
+    [6, 7],
+    [9, 2],
+])
+const actedx.MMath.actPairOfMatrices(firstMatrix, secondMatrixm (valueA, valueB) => valueA + valueB - 2)
 ```
 
 # Available Scripts
@@ -173,4 +131,4 @@ Test and build library by `yarn test` and `yarn build` automatically.
 
 ## `publish.sh`
 Publish library to npm registry.
-`* Note that you are not albe to run that script because you are not equipped with npm auth token. That is just additional informaiton`
+*Note that you are not albe to run that script because you are not equipped with npm auth token. That is just additional informaiton
