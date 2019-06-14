@@ -1,7 +1,7 @@
 import Matrix from '../Matrix'
 import { displayMatricesDimensions } from '../helpers'
 
-export function mergeByActionPairOfMatrices(matrixA: Matrix, matrixB: Matrix, action: (valueA: number, valueB: number) => number): Matrix  {
+export function actPairOfMatrices(matrixA: Matrix, matrixB: Matrix, action: (valueA: number, valueB: number) => number): Matrix  {
   if (matrixA.colNum() !== matrixB.colNum() || matrixA.rowNum() !== matrixB.rowNum()) {
     throw new Error(`[Mx Math] You cannot act on 2 matrices of different sizes. ${displayMatricesDimensions([matrixA, matrixB])}`)
   }
@@ -14,11 +14,11 @@ export function mergeByActionPairOfMatrices(matrixA: Matrix, matrixB: Matrix, ac
 }
 
 export function mergePairOfMatrices(matrixA: Matrix, matrixB: Matrix): Matrix {
-  return mergeByActionPairOfMatrices(matrixA, matrixB, (valueA, valueB) => valueA + valueB)
+  return actPairOfMatrices(matrixA, matrixB, (valueA, valueB) => valueA + valueB)
 }
 
 export function subtractPairOfMatrices(matrixA: Matrix, matrixB: Matrix): Matrix {
-  return mergeByActionPairOfMatrices(matrixA, matrixB, (valueA, valueB) => valueA - valueB)
+  return actPairOfMatrices(matrixA, matrixB, (valueA, valueB) => valueA - valueB)
 }
 
 export function multiplyPairOfMatrices(matrixA: Matrix, matrixB: Matrix): Matrix {
