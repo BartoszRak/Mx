@@ -16,6 +16,8 @@ console.log(myMatrix.row(1))
 const transposedMatrix = myMatrix.transpose()
 console.log(transposedMatrix)
 Mx.displayMatricesDimensions([ myMatrix, transposedMatrix ])
+const mergedMatrix = Mx.MMath.mergePairOfMatrices(myMatrix, transposedMatrix)
+console.log(mergedMatrix)
 
 
 function App() {
