@@ -13,10 +13,24 @@ export function mergeByActionPairOfMatrices(matrixA: Matrix, matrixB: Matrix, ac
   return new Matrix(tmpMatrix)
 }
 
-export function mergePairOfMatrices(matrixA: Matrix, matrixB: Matrix) {
+export function mergePairOfMatrices(matrixA: Matrix, matrixB: Matrix): Matrix {
   return mergeByActionPairOfMatrices(matrixA, matrixB, (valueA, valueB) => valueA + valueB)
 }
 
-export function subtractPairOfMatrices(matrixA: Matrix, matrixB: Matrix) {
+export function subtractPairOfMatrices(matrixA: Matrix, matrixB: Matrix): Matrix {
   return mergeByActionPairOfMatrices(matrixA, matrixB, (valueA, valueB) => valueA - valueB)
+}
+
+export function multiplyPairOfMatrices(matrixA: Matrix, matrixB: Matrix): Matrix {
+  if (matrixA.colNum() !==  matrixB.rowNum()) {
+    throw new Error(`[Mx Math] You cannot multiply matrices if number of rows is diffrent than number of columns. ${displayMatricesDimensions([matrixA, matrixB])}`)
+  }
+  const tmpMatrix: number[][] = matrixA.raw().map((matrixARow: number[], rowIndex: number) => {
+    return matrixARow.map((matrixACell: number, columnIndex: number) => {
+      return matrixARow.reduce((acc: number, currentValue: number, index: number): number => {
+        return acc + (currentValue * matrixB.cell(columnIndex, index))
+      }, 0)
+    })
+  })
+  return new Matrix(tmpMatrix)
 }
