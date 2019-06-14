@@ -73,6 +73,21 @@ myMatrix.column(2)
 // Returns: [4, 2, 12]
 ```
 
+## `Get matrix columns number`
+```javascript
+MyMatrixObject.colNum()
+```
+### Examples
+```javascript
+const myMatrix = new Mx.Matrix([
+  [1, 5, 4],
+  [2, 51, 12],
+])
+
+myMatrix.colNum()
+// Returns: 3
+```
+
 ## `Get matrix row`
 ```javascript
 MyMatrixObject.row(number)
@@ -87,6 +102,21 @@ const myMatrix = new Mx.Matrix([
 
 myMatrix.row(1)
 // Returns: [7, 8, 2]
+```
+
+## `Get matrix rows number`
+```javascript
+MyMatrixObject.rowNum()
+```
+### Examples
+```javascript
+const myMatrix = new Mx.Matrix([
+  [1, 5, 4],
+  [2, 51, 12],
+])
+
+myMatrix.rowNum()
+// Returns: 2
 ```
 
 ## `Get matrix raw data`
