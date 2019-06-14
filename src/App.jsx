@@ -18,7 +18,8 @@ console.log(transposedMatrix)
 Mx.displayMatricesDimensions([ myMatrix, transposedMatrix ])
 const mergedMatrix = Mx.MMath.mergePairOfMatrices(myMatrix, transposedMatrix)
 console.log(mergedMatrix)
-
+const subtractedMatrix = Mx.MMath.subtractPairOfMatrices(myMatrix, transposedMatrix)
+console.log(subtractedMatrix)
 
 function App() {
   return (
