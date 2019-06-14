@@ -8,18 +8,19 @@ const myMatrix = new Mx.Matrix([
   [15, 19],
   [8, 4, 2]
 ])
-console.log(myMatrix.isMx())
-console.log(myMatrix)
-console.log(myMatrix.cell(1, 1))
-console.log(myMatrix.column(1))
-console.log(myMatrix.row(1))
+console.log('Normal matrix: ', myMatrix)
+
 const transposedMatrix = myMatrix.transpose()
-console.log(transposedMatrix)
-Mx.displayMatricesDimensions([ myMatrix, transposedMatrix ])
+console.log('Transposed matrix: ', transposedMatrix)
+
 const mergedMatrix = Mx.MMath.mergePairOfMatrices(myMatrix, transposedMatrix)
-console.log(mergedMatrix)
+console.log('Merged matrix: ', mergedMatrix)
+
 const subtractedMatrix = Mx.MMath.subtractPairOfMatrices(myMatrix, transposedMatrix)
-console.log(subtractedMatrix)
+console.log('Subtracted matrix: ', subtractedMatrix)
+
+const multipliedMatrix = Mx.MMath.multiplyPairOfMatrices(myMatrix, transposedMatrix)
+console.log('Multiplied matrix: ', multipliedMatrix)
 
 function App() {
   return (
