@@ -3,8 +3,8 @@ import MMath from './MMath'
 import { displayMatricesDimensions } from './helpers'
 
 const Mx: any = {
-  Matrix,
-  MMath,
+  Matrix: Matrix,
+  MMath: MMath,
   isMx: (): boolean => true,
   displayMatricesDimensions,
 }

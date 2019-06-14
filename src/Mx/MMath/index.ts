@@ -1,7 +1,8 @@
-import { mergePairOfMatrices } from './MMath'
+import { mergePairOfMatrices, subtractPairOfMatrices } from './MMath'
 
 const MMath = {
   mergePairOfMatrices,
+  subtractPairOfMatrices,
 }
 
 export default MMath
